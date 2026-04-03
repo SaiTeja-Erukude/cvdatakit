@@ -1,8 +1,6 @@
-# cvquality – Computer Vision Data-Centric Toolkit
+# cv-quality – Computer Vision Quality Toolkit
 
-A Python library for **dataset-centric CV work**: label-quality checks,
-class-imbalance analysis, mislabel detection, and active-learning loop
-orchestration. Targets COCO/ImageNet datasets and their long-tail derivatives.
+A Python library for **computer vision dataset quality workflows**, including label-quality auditing, class-imbalance analysis, mislabel discovery, and active-learning pipeline orchestration. Designed for COCO, ImageNet, and long-tail dataset variants.
 
 ---
 
@@ -43,17 +41,19 @@ orchestration. Targets COCO/ImageNet datasets and their long-tail derivatives.
 
 ```bash
 # Core (no ML framework required)
-pip install cvquality
+pip install cv-quality
 
 # With PyTorch backend
-pip install "cvquality[torch]"
+pip install "cv-quality[torch]"
 
 # With TensorFlow backend
-pip install "cvquality[tensorflow]"
+pip install "cv-quality[tensorflow]"
 
 # Everything + dev tools
-pip install "cvquality[all,dev]"
+pip install "cv-quality[all,dev]"
 ```
+
+> **Import name:** `import cvquality` (PyPI distribution name is `cv-quality`)
 
 ---
 
@@ -224,7 +224,7 @@ cvquality/
 ├── recipes/            COCO & ImageNet pipelines
 ├── io/                 COCO reader + report generator
 └── cli/                Click-based CLI
-tests/                  pytest suite (~60 tests)
+tests/                  pytest suite (87 tests)
 ```
 
 ---
@@ -234,16 +234,22 @@ tests/                  pytest suite (~60 tests)
 ```bash
 pip install build twine
 python -m build
+twine check dist/*
 twine upload dist/*
 ```
+
+Use `__token__` as the username and a PyPI API token as the password.
+See [`deploy.md`](dev-data/deploy.md) for the full step-by-step guide.
 
 ---
 
 ## Authors
 
-**cvquality** is authored and maintained by **Sai Teja Erukude**.
+**cv-quality** is authored and maintained by **Sai Teja Erukude**.
 
-- **Homepage / repository:** https://github.com/SaiTeja-Erukude/cvquality
+- **PyPI:** https://pypi.org/project/cv-quality/
+- **Homepage / repository:** https://github.com/SaiTeja-Erukude/cv-quality
+- **Issues:** https://github.com/SaiTeja-Erukude/cv-quality/issues
 
 ---
 
